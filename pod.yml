@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-webapp
+  namespace: jenkins-dev
+spec:
+  containers:
+    - name: go-webapp-container
+      image: gcasali01/webapp:latest
+      ports:
+        - containerPort: 8080
