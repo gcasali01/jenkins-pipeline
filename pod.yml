@@ -6,6 +6,6 @@ metadata:
 spec:
   containers:
     - name: go-webapp-container
-      image: gcasali01/webapp:latest
+      image: ubuntu
       ports:
         - containerPort: 8080
