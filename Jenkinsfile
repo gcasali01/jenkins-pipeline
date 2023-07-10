@@ -12,7 +12,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build dockerimagename
+          dockerImage = docker.build(dockerimagename)
         }
       }
     }
@@ -23,7 +23,7 @@ pipeline {
            }
       steps{
         script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+          docker.withRegistry( 'https://docker.io', registryCredential ) {
             dockerImage.push("latest")
           }
         }
