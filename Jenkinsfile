@@ -9,26 +9,7 @@ pipeline {
 
   stages {
 
-    stage('Build image') {
-      steps{
-        script {
-          dockerImage = docker.build(dockerimagename)
-        }
-      }
-    }
-
-    stage('Pushing Image') {
-      environment {
-               registryCredential = 'dockerhub-credentials'
-           }
-      steps{
-        script {
-          docker.withRegistry( 'https://docker.io', registryCredential ) {
-            dockerImage.push("latest")
-          }
-        }
-      }
-    }
+  
 
     stage('Deploying Webapp container to Kubernetes') {
       steps {
