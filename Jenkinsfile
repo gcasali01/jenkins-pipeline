@@ -9,12 +9,6 @@ pipeline {
 
   stages {
 
-    stage('Checkout Source') {
-      steps {
-        git 'https://github.com/gcasali01/jenkins-pipeline.git'
-      }
-    }
-
     stage('Build image') {
       steps{
         script {
